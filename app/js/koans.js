@@ -23,6 +23,7 @@ var koans = function() {
   return {
     makeIOCall: makeIOCall
   };
+
 };
 
-koans();
+

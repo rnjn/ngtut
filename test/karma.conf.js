@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
 
     basePath: '../',
-
+    logLevel: config.LOG_DEBUG  ,
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
