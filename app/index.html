@@ -1,21 +1,33 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <title></title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/app.js"></script>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
 </head>
+
 <body>
-
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
-
+    <div ng-app='ngtut'>
+        <div ng-controller='ListController'>
+            <ul>
+                <li>
+                    <span>Nexus S</span>
+                    <p>
+                        Fast just got faster with Nexus S.
+                    </p>
+                </li>
+                <li>
+                    <span>Motorola XOOM™ with Wi-Fi</span>
+                    <p>
+                        The Next, Next Generation tablet.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>

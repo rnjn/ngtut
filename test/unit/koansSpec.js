@@ -6,7 +6,6 @@ describe('javascript koans', function() {
       var reader = function(response) {
         var abstract = response.Abstract;
         expect(abstract).not.toBe('');
-        console.log(abstract);
         done();
       };
       koans().makeIOCall(reader);
