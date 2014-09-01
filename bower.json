@@ -5,16 +5,14 @@
     "homepage": "https://github.com/rnjn/ngtut",
     "private": true,
     "dependencies": {
-	"angular": "1.2.x",
-	"angular-resource": "1.2.x",
-	"angular-route": "1.2.x",
-	"jquery": "2.x",
-	"bootstrap": "x"
+        "angular": "1.2.x",
+        "angular-resource": "1.2.x",
+        "angular-route": "1.2.x",
+        "jquery": "2.x",
+        "bootstrap": "x"
     },
     "devDependencies": {
-	"angular-mocks": "1.2.x"
+        "angular-mocks": "1.2.x"
     }
 
 }
-
-

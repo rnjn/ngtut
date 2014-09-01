@@ -1,9 +1,10 @@
 'use strict';
 
 var koans = function() {
-  var someIOCall = function() {
+  var someIOCall = function(reader) {
     var result = {};
     var readData = function(data){
+      reader(data);
       result = data;
     };
     $.ajax({
@@ -11,13 +12,10 @@ var koans = function() {
       dataType: 'jsonp'
     }).then(readData);
     return result;
-
   };
 
-  var makeIOCall = function() {
-    var readText = someIOCall();
-    console.log(readText);
-    return readText;
+  var makeIOCall = function(reader) {
+    return someIOCall(reader);
   };
 
   return {
@@ -25,5 +23,3 @@ var koans = function() {
   };
 
 };
-
-

@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
 
     basePath: '../',
-    logLevel: config.LOG_DEBUG  ,
+    // logLevel: config.LOG_DEBUG  ,
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
@@ -19,11 +19,11 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     plugins: [
       'karma-chrome-launcher',
-      'karma-firefox-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine'
     ],
 
