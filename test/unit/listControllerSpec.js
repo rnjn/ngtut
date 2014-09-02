@@ -18,4 +18,6 @@ describe('List controller', function() {
   it('should read static data on model', function(){
     expect(scope.phones.length).toBe(2);
   });
+
+  
 });

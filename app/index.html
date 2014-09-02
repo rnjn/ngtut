@@ -5,6 +5,7 @@
     <title></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/listController.js"></script>
@@ -19,8 +20,11 @@
             <p></p>
             <ul>
                 <li ng-repeat= "phone in phones">
-                    <span>{{phone.name}}</span>
+                    <span ng-class={bold:phone.rating=='5'}>{{phone.name}}</span>
+                    <p></p>
+                    <span>Rating:</span><input type='number' name='rating' min="0" max="5" ng-model='phone.rating'>
                     <p>{{phone.snippet}}</p>
+                    <p></p>
                 </li>
             </ul>
         </div>
