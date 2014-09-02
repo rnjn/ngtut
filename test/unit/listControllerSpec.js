@@ -29,5 +29,8 @@ describe('List controller', function() {
       httpBackend.flush();
       expect(scope.phones.length).toBe(2);
     });
+    if('should filter phones upon user input', function(){
+
+    });
   });
 });
