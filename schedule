@@ -1,0 +1,32 @@
+schedule
+
+Day 1
+==================
+Setup
+Javascript basics
+Event Loop
+
+Day 2
+==================
+TDD and Dependency Injection
+Basic Templates
+2-way data binding
+Partials
+
+Day 3
+==================
+Routing
+Services
+Talking to a server
+
+Day 4
+==================
+Directives
+Providers
+Compiler
+Scope
+
+Day 5
+==================
+Caching
+Security
