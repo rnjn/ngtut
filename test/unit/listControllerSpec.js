@@ -19,5 +19,10 @@ describe('List controller', function() {
     expect(scope.phones.length).toBe(2);
   });
 
-  
+  it('should update style based on phone rating', function(){
+    var phone = scope.phones[0];
+    expect(scope.phoneStyleBold(phone)).toBe(false);
+    phone.rating = 4;
+    expect(scope.phoneStyleBold(phone)).toBe(true);
+  });
 });
