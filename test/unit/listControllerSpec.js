@@ -1,28 +1,33 @@
 'use strict';
 
 describe('List controller', function() {
-  var scope, listController;
-  beforeEach(module('ngtut'));
+  describe('Uses $http to load data', function() {
+    var scope, listController, httpBackend;
+    beforeEach(module('ngtut'));
+    var phones = [{
+      'age': 0,
+      'id': 'motorola-xoom-with-wi-fi',
+      'name': 'Motorola XOOM',
+    }, {
+      'age': 6,
+      'carrier': 'Best Buy',
+      'id': 'nexus-s',
+      'name': 'Nexus S',
+    }];
+    beforeEach(inject(function($rootScope, $controller, $httpBackend) {
+      scope = $rootScope.$new();
+      httpBackend = $httpBackend;
 
-  beforeEach(inject(function($rootScope, $controller) {
-    scope = $rootScope.$new();
-    listController = $controller('ListController',{
-      $scope: scope
+      $httpBackend.expectGET('data/phones.json').respond(phones);
+      listController = $controller('ListController', {
+        $scope: scope
+      });
+    }));
+
+    it('should GET phones from data/phones.json', function() {
+      expect(scope.phones.length).toBe(0);
+      httpBackend.flush();
+      expect(scope.phones.length).toBe(2);
     });
-  }));
-
-  it('should read static primitives on model', function() {
-    expect(scope.ultimateAnswerToLife).toBe(42);
-  });
-
-  it('should read static data on model', function(){
-    expect(scope.phones.length).toBe(2);
-  });
-
-  it('should update style based on phone rating', function(){
-    var phone = scope.phones[0];
-    expect(scope.phoneStyleBold(phone)).toBe(false);
-    phone.rating = 4;
-    expect(scope.phoneStyleBold(phone)).toBe(true);
   });
 });

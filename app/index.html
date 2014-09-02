@@ -14,15 +14,10 @@
 <body>
     <div ng-app='ngtut'>
         <div ng-controller='ListController'>
-            <div>
-            The ultimate answer to life :{{ultimateAnswerToLife}}
-            </div>
-            <p></p>
             <ul>
                 <li ng-repeat= "phone in phones">
-                    <span ng-class={bold:phoneStyleBold(phone)}>{{phone.name}}</span>
+                    <span class="bold">{{phone.name}}</span>
                     <p></p>
-                    <span>Rating: </span><input type='number' name='rating' min="0" max="5" ng-model='phone.rating'>
                     <p>{{phone.snippet}}</p>
                     <p></p>
                 </li>
