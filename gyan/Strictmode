@@ -1,0 +1,12 @@
+Strict mode
+
+- places javascript in a strict operating context
+- prevents some common errors that end up in buggy code
+- throws exceptions on unsafe code
+    * foo = 'bar'; <= if foo isn't defined, exception
+    * { foo: 'bar', foo: 'baz'} <= exception, cannot create duplicates
+    * delete foo <= fails
+    * name 'eval' throws an exception
+    * cannot create new variables using eval
+    * Cannot overwrite arguments to a function
+    * (function(){ ... }).call( null ); <= exception, null cannot be forced to be global object
