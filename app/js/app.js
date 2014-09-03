@@ -1,9 +1,6 @@
 'use strict';
 
-var ngtut = angular.module('ngtut', ['ngRoute']);
-
-ngtut.config(['$routeProvider',
-  function($routeProvider) {
+var routes = function($routeProvider) {
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/list.html',
@@ -16,4 +13,8 @@ ngtut.config(['$routeProvider',
       otherwise({
         redirectTo: '/phones'
       });
-  }]);
+  };
+
+var ngtut = angular.module('ngtut', ['ngRoute']);
+
+ngtut.config(['$routeProvider', routes]);
