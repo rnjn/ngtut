@@ -1,6 +1,0 @@
-Post-class Exercises 
-
-Day 2
-===================
-1. Update the page with average rating of all phones
-2. Breakpoint on $scope.phoneStyleBold, and explore this.$parent in chrome dev tools

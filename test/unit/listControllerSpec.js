@@ -10,7 +10,6 @@ describe('List controller', function() {
       'name': 'Motorola XOOM',
     }, {
       'age': 6,
-      'carrier': 'Best Buy',
       'id': 'nexus-s',
       'name': 'Nexus S',
     }];
@@ -18,7 +17,7 @@ describe('List controller', function() {
       scope = $rootScope.$new();
       httpBackend = $httpBackend;
 
-      $httpBackend.expectGET('data/phones.json').respond(phones);
+      httpBackend.expectGET('data/phones.json').respond(phones);
       listController = $controller('ListController', {
         $scope: scope
       });
@@ -29,8 +28,6 @@ describe('List controller', function() {
       httpBackend.flush();
       expect(scope.phones.length).toBe(2);
     });
-    if('should filter phones upon user input', function(){
-
-    });
+    
   });
 });
