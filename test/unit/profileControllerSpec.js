@@ -3,7 +3,7 @@ define('profileControllerSpec', ['app', 'angularMocks'],
   function(app, angularMocks) {
     describe('Profile controller', function() {
       describe('Uses $http to load data', function() {
-        var scope, listController, httpBackend, routeParams;
+        var scope, profileController, httpBackend, routeParams;
         beforeEach(module('ngtut'));
         var phone = {
           'age': 0,
@@ -11,16 +11,22 @@ define('profileControllerSpec', ['app', 'angularMocks'],
           'name': 'Motorola XOOM'
         };
 
+        var ratingService = {
+          getRating: function(phoneId){}
+        };
+
         beforeEach(inject(function($rootScope, $controller, $httpBackend, $routeParams) {
           scope = $rootScope.$new();
           httpBackend = $httpBackend;
           routeParams = $routeParams;
-
           routeParams.phoneId = 'motorola-xoom-with-wi-fi';
           httpBackend.expectGET('data/motorola-xoom-with-wi-fi.json').respond(phone);
+          spyOn(ratingService, 'getRating');
 
-          listController = $controller('ProfileController', {
-            $scope: scope
+
+          profileController = $controller('ProfileController', {
+            $scope: scope,
+            ratingService: ratingService
           });
 
         }));
@@ -29,6 +35,11 @@ define('profileControllerSpec', ['app', 'angularMocks'],
           expect(scope.phone.name).toBeUndefined();
           httpBackend.flush();
           expect(scope.phone.name).toBe('Motorola XOOM');
+        });
+
+        it('should read phone rating from Rating service',function(){
+          httpBackend.flush();
+          expect(ratingService.getRating).toHaveBeenCalled();  
         });
 
       });

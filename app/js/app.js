@@ -1,12 +1,24 @@
 'use strict';
 
-define('app', ['angular','RouteConfig', 'ListController', 'ProfileController', 'directives/rating'],
-  function(angular, config, listController, profileController, rating) {
+define('app', ['angular', 'RouteConfig',
+    'directives/RatingDirective', 'services/ratingService',
+    'controllers/ListController', 'controllers/ProfileController', 'controllers/ItemController'
+  ],
+  
+  function(angular, config,
+    ratingDirective, ratingService,
+    listController, profileController, itemController) {
+
     var ngtut = angular.module('ngtut', ['ngRoute']);
     ngtut.config(['$routeProvider', config.routes]);
+
+    ngtut.directive('rating', ratingDirective);
+
+    ngtut.factory('ratingService', ratingService);
+
     ngtut.controller('ListController', ['$scope', '$http', listController]);
-    ngtut.controller('ProfileController', ['$scope', '$http', '$routeParams', profileController]);
-    ngtut.directive('rating', rating);
+    ngtut.controller('ItemController', ['$scope', 'ratingService', itemController]);
+    ngtut.controller('ProfileController', ['$scope', '$http', '$routeParams', 'ratingService', profileController]);
 
     return ngtut;
   });
