@@ -10,11 +10,12 @@
             <ul class="list-unstyled">
                 <li ng-repeat= "phone in phones | filter:query" class="">
                     <a href="#/phones/{{phone.id}}" class="h3">{{phone.name}}</a>
+                    <rating></rating>
                     <blockquote>
                         <p class="lead">{{phone.snippet}}</p>
                     </blockquote>
-                </li>
-            </ul>
+                    <label>Rating: {{getRating(phone)}}</label>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</div>
