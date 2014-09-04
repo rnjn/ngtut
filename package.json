@@ -9,6 +9,7 @@
     "karma": "~0.12.0",
     "karma-jasmine": "~0.2.0",
     "karma-phantomjs-launcher": "~0.1",
+    "karma-requirejs":"~0.2.0",
     "protractor": "~1.0.0",
     "http-server": "^0.6.1",
     "tmp": "0.0.23",
