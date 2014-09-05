@@ -1,6 +1,6 @@
 'use strict';
 
-define('directives/RatingDirective', [], function() {
+define('directives/ratingDirective', [], function() {
   var rating = function() {
     return {
       restrict: 'EA', 

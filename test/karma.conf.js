@@ -8,11 +8,9 @@ module.exports = function(config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/js/**/*.js',
       'test/test-main.js',
-      'test/unit.js',
       'test/unit/**/*.js'
     ],
     exclude: [
@@ -22,7 +20,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine', 'requirejs'],
 
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     plugins: [
       'karma-chrome-launcher',

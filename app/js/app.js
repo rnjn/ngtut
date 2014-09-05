@@ -1,7 +1,7 @@
 'use strict';
 
 define('app', ['angular', 'RouteConfig',
-    'directives/RatingDirective', 'services/ratingService',
+    'directives/ratingDirective', 'services/ratingService',
     'controllers/ListController', 'controllers/ProfileController', 'controllers/ItemController'
   ],
   

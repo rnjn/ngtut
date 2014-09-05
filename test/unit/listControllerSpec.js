@@ -17,10 +17,6 @@ define('listControllerSpec', ['app', 'angularMocks'],
           'name': 'Nexus S',
         }];
 
-        var ratingService = {
-          setRating: function(phoneId, rating){}
-        };
-
         beforeEach(module('ngtut'));
 
         beforeEach(inject(function($rootScope, $controller, $httpBackend) {

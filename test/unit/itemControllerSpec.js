@@ -33,7 +33,7 @@ define('itemControllerSpec', ['app', 'angularMocks'],
 
         it('should set user rating to Rating Service', function() {
           scope.phone.rating = 5;
-          scope.$digest();
+          scope.$apply();
           expect(ratingService.setRating).toHaveBeenCalled();
         });
 

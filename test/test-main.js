@@ -9,8 +9,6 @@ for (var file in window.__karma__.files) {
     }
 }
 
-console.log(tests);
-
 requirejs.config({
     paths: {
         angular: '/base/app/bower_components/angular/angular',
